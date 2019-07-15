@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f83f43</color>
+    <color name="colorPrimaryDark">#D81B60</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="titleColor">#f83f43</color>
+
+    <color name="color333">#333333</color>
+    <color name="color86">#333333</color>
+    <color name="color999">#999999</color>
+    <color name="mainColor">#f83f43</color>
+    <color name="loginColor">#f83f43</color>
+    <color name="loginBtnColor">#F04844</color>
+    <color name="black">#000000</color>
+    <color name="text_gray">#999999</color>
+    <color name="text_red">#f85360</color>
+    <color name="mainColorRipple">#55fc4f2c</color>
+    <color name="textColorMain">#3399f9</color>
+    <color name="textColor">#333333</color>
+    <color name="white">#ffffff</color>
+    <color name="colorLine">#E4E4E4</color>
+    <color name="colorBackground">#efefef</color>
+    <color name="colorBackgroundDark">#f6f6f6</color>
+    <color name="Dark">#dfe0e1</color>
+    <color name="default_selector">#eeeeee</color>
+    <color name="all_bg_gray">#F0F0F0</color>
+    <color name="pink_text">#FE6A9C</color>
+    <color name="btn_cancel_color">#999999</color>
+    <color name="btn_confirm_color">#303F9F</color>
+    <color name="order_red">#ee4744</color>
+    <color name="test">#ee4744</color>
+    <color name="alpha20">#66050505</color>
+
+
+    <color name="Orange">#e75946</color>
+    <color name="Yellow">#f4d227</color>
+    <color name="Blue">#4674e7</color>
+    <color name="Green">#0ba62c</color>
+    <color name="xxx">#FC4F07</color>
+</resources>

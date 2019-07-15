@@ -1,0 +1,120 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+
+version = "0.0.1"
+
+android {
+
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName version
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+repositories {
+    flatDir { dirs 'libs' }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar', '*.aar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    api 'com.google.android.material:material:1.0.0'
+    api 'com.squareup.okhttp3:okhttp:4.0.0'
+    api 'com.github.bumptech.glide:glide:4.9.0'
+    api 'com.tencent:mmkv:1.0.22'
+    api 'org.apache.commons:commons-lang3:3.9'
+    api 'com.google.code.gson:gson:2.8.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+}
+
+
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+
+def siteUrl = 'https://github.com/songdehuai/CommonExample'
+def gitUrl = 'https://github.com/songdehuai/CommonExample.git'
+def module_name = 'commonlib'
+group = 'com.songdehuai'
+install {
+    repositories.mavenInstaller {
+        pom {
+            project {
+                packaging 'aar'
+                name 'commonlib'
+                url siteUrl
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0' // 开源协议名称
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt' // 协议地址
+                    }
+                }
+                developers {
+                    developer {
+                        id 'songdehuai'    // 账号
+                        name 'songdehuai'    // 名称
+                        email 'songdehuai@outlook.com' // 邮箱地址
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+artifacts {
+    archives sourcesJar
+}
+Properties properties = new Properties()
+properties.load(project.rootProject.file('mavenAccount.properties').newDataInputStream())
+bintray {
+    // 读取配置文件中的用户名和key
+    user = properties.getProperty("bintrayUser")
+    key = properties.getProperty("bintrayApiKey")
+    configurations = ['archives']
+    pkg {
+        repo = "commonlib"        // 你在bintray上创建的库的名称
+        name = module_name               // 在jcenter中的项目名称
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}

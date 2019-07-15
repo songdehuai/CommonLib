@@ -1,0 +1,11 @@
+/build
+.gradle/
+.idea/
+mavenAccount.properties
+release-as-aar.gradle
+release-as-jar.gradle
+local.properties
+*.iml
+*.apk
+*.jks
+*.keystore

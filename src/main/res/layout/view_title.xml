@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:background="@color/mainColor"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_finish_li"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/title_left_padding"
+        android:paddingRight="@dimen/title_right_padding">
+
+
+        <ImageView
+            android:id="@+id/title_finish_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_finish_white" />
+
+        <TextView
+            android:id="@+id/title_finish_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="返回"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/base_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="@dimen/title_size" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_right_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical|right"
+        android:paddingLeft="@dimen/title_left_padding"
+        android:paddingRight="@dimen/title_right_padding">
+
+        <ImageView
+            android:id="@+id/title_right_iv"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/title_right_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:visibility="invisible" />
+    </RelativeLayout>
+</RelativeLayout>

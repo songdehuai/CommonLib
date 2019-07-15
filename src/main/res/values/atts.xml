@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="MyRefreshLayout" tools:ignore="MissingDefaultResource">
+        <attr name="rf_max_head_height" format="dimension" />
+        <attr name="rf_head_height" format="dimension" />
+        <attr name="rf_max_bottom_height" format="dimension" />
+        <attr name="rf_bottom_height" format="dimension" />
+        <attr name="rf_overscroll_height" format="dimension" />
+        <attr name="rf_enable_refresh" format="boolean" />
+        <attr name="rf_enable_loadmore" format="boolean" />
+        <attr name="rf_pureScrollMode_on" format="boolean" />
+        <attr name="rf_overscroll_top_show" format="boolean" />
+        <attr name="rf_overscroll_bottom_show" format="boolean" />
+        <attr name="rf_enable_overscroll" format="boolean" />
+        <attr name="rf_headerView" format="dimension" />
+        <attr name="rf_bottomView" format="dimension" />
+        <attr name="rf_floatRefresh" format="boolean" />
+        <attr name="rf_autoLoadMore" format="boolean" />
+        <attr name="rf_enable_keepIView" format="boolean" />
+        <attr name="rf_showRefreshingWhenOverScroll" format="boolean" />
+        <attr name="rf_showLoadingWhenOverScroll" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="WaveSideBarView">
+        <attr name="sidebarTextColor" format="color|reference" />
+        <attr name="sidebarBackgroundColor" format="color|reference" />
+        <attr name="sidebarChooseTextColor" format="color|reference" />
+        <attr name="sidebarTextSize" format="dimension" />
+        <attr name="sidebarLargeTextSize" format="dimension" />
+        <attr name="sidebarRadius" format="dimension" />
+        <attr name="sidebarBallRadius" format="dimension" />
+    </declare-styleable>
+
+
+    <declare-styleable name="StatusView">
+        <attr name="android:textSize" />
+        <attr name="StatusView_slashAngle" format="integer" />
+        <attr name="StatusView_textColor" format="color|reference" />
+        <attr name="StatusView_normalColor" format="color|reference" />
+        <attr name="StatusView_selectedColor" format="color|reference" />
+        <attr name="StatusView_selectedTextColor" format="color|reference" />
+        <attr name="StatusView_texts" format="string" />
+        <attr name="StatusView_retinue" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="StarView">
+        <attr name="selectedDrawable" format="reference" />
+        <attr name="unSelectedDrawable" format="reference" />
+        <attr name="max" format="integer" />
+        <attr name="value" format="integer" />
+        <attr name="clickEnable" format="boolean" />
+    </declare-styleable>
+
+
+    <declare-styleable name="PassView">
+        <attr name="showRes" format="color|reference" />
+        <attr name="hideRes" format="color|reference" />
+    </declare-styleable>
+
+
+    <!-- 圆形ImageView -->
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_fill_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="SegmentControl">
+        <attr name="cornerRadius" format="dimension|reference" />
+        <attr name="normalColor" format="color|reference" />
+        <attr name="selectedColor" format="color|reference" />
+        <attr name="backgroundColors" format="color|reference" />
+        <attr name="textColors" format="color|reference" />
+        <attr name="texts" format="string|reference" />
+        <attr name="android:textSize" />
+        <attr name="android:orientation" />
+        <!-- 外部边框的width -->
+        <attr name="boundWidth" format="dimension|reference" />
+        <!-- 内部边框的width -->
+        <attr name="separatorWidth" format="dimension|reference" />
+        <attr name="gaps" format="dimension|reference" />
+        <attr name="horizonGap" format="dimension|reference" />
+        <attr name="verticalGap" format="dimension|reference" />
+    </declare-styleable>
+
+    <!--滚动TextView-->
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference" />
+        <attr name="mvAnimDuration" format="integer|reference" />
+        <attr name="mvTextSize" format="dimension|reference" />
+        <attr name="mvTextColor" format="color|reference" />
+        <attr name="mvSingleLine" format="boolean" />
+        <attr name="mvGravity">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <declare-styleable name="SwitchButton">
+        <attr name="kswThumbDrawable" format="reference" />
+        <attr name="kswThumbColor" format="color|reference" />
+        <attr name="kswThumbMargin" format="dimension|reference" />
+        <attr name="kswThumbMarginTop" format="dimension|reference" />
+        <attr name="kswThumbMarginBottom" format="dimension|reference" />
+        <attr name="kswThumbMarginLeft" format="dimension|reference" />
+        <attr name="kswThumbMarginRight" format="dimension|reference" />
+        <attr name="kswThumbWidth" format="dimension|reference" />
+        <attr name="kswThumbHeight" format="dimension|reference" />
+        <attr name="kswThumbRadius" format="dimension|reference" />
+        <attr name="kswBackRadius" format="dimension|reference" />
+        <attr name="kswBackDrawable" format="reference" />
+        <attr name="kswBackColor" format="color|reference" />
+        <attr name="kswFadeBack" format="boolean" />
+        <attr name="kswBackMeasureRatio" format="float" />
+        <attr name="kswAnimationDuration" format="integer" />
+        <attr name="kswTintColor" format="color|reference" />
+        <attr name="kswTextOn" format="string" />
+        <attr name="kswTextOff" format="string" />
+        <attr name="kswTextMarginH" format="dimension" />
+        <attr name="kswAutoAdjustTextPosition" format="boolean" />
+    </declare-styleable>
+
+
+</resources>
