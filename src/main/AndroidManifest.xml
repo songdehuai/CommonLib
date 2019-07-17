@@ -3,9 +3,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
-        <activity
-            android:name=".utils.imagepicker.CameraPickerCalBackActivity"
-            android:theme="@style/notAnimation" />
+        <activity android:name=".utils.imagepicker.CameraPickerCalBackActivity" />
         <activity android:name=".utils.imagepicker.MultImagePickerActivity" />
 
         <provider

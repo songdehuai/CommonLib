@@ -33,6 +33,16 @@ object ImagePicker {
 
     /**
      * 启动相机
+     */
+    fun startCameraPicker(context: Context, callBack: ((list: ArrayList<ImageItem>) -> Unit)) {
+        ImagePicker.imagePickerCallBack = ImagePickerCallBack { callBack.invoke(it) }
+        val intent = Intent(context, CameraPickerCalBackActivity::class.java)
+        intent.putExtra("isCamera", true)
+        context.startActivity(intent)
+    }
+
+    /**
+     * 启动相机
      *
      * @param context
      * @param imagePickerCallBack

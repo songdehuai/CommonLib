@@ -2,10 +2,7 @@ package com.commonlib.ext.listener
 
 import androidx.appcompat.widget.SearchView
 
-/**
- * Created by luyao
- * on 2019/7/10 16:39
- */
+
 fun SearchView.queryTextListener(listener: KtxQueryTextLister.() -> Unit) {
     setOnQueryTextListener(KtxQueryTextLister().apply(listener))
 }

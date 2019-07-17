@@ -4,10 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.widget.TextView
 
-/**
- * Created by luyao
- * on 2019/7/9 16:13
- */
+
 
 fun TextView.textWatcher(watcher: KtxTextWatcher.() -> Unit) =
     addTextChangedListener(KtxTextWatcher().apply(watcher))
