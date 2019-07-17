@@ -5,7 +5,7 @@
         path="Android/data/com.songdehuai.commonexample/" />
     <external-path
         name="files_root"
-        path="Android/data/com.songdehuai.commonlib/" />
+        path="Android/data/com.commonlib/" />
     <external-path
         name="external_storage_root"
         path="." />

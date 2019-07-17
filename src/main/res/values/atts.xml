@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <declare-styleable name="MultiImageView">
+
+    </declare-styleable>
+
     <declare-styleable name="MyRefreshLayout" tools:ignore="MissingDefaultResource">
         <attr name="rf_max_head_height" format="dimension" />
         <attr name="rf_head_height" format="dimension" />

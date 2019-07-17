@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.songdehuai.commonlib">
+    package="com.commonlib">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application>
@@ -19,7 +19,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_provider" />
         </provider>
-        <service android:name=".ws.SocketService" />
     </application>
 
 </manifest>
