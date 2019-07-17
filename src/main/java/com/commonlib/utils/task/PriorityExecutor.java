@@ -1,4 +1,4 @@
-package com.commonlib.task;
+package com.commonlib.utils.task;
 
 import java.util.Comparator;
 import java.util.concurrent.BlockingQueue;

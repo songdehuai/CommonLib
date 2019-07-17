@@ -8,8 +8,6 @@
             android:theme="@style/notAnimation" />
         <activity android:name=".utils.imagepicker.MultImagePickerActivity" />
 
-        <activity android:name=".utils.grantor.PermissionActivity" />
-
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.fileProvider"

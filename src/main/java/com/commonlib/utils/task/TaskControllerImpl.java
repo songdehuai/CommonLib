@@ -1,10 +1,9 @@
-package com.commonlib.task;
+package com.commonlib.utils.task;
 
 import android.os.Looper;
 
-
-import com.commonlib.task.callback.Callback;
 import com.commonlib.utils.LogUtil;
+import com.commonlib.utils.task.callback.Callback;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

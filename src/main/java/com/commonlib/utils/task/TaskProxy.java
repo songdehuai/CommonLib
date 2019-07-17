@@ -1,12 +1,11 @@
-package com.commonlib.task;
+package com.commonlib.utils.task;
 
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-
-import com.commonlib.task.callback.Callback;
 import com.commonlib.utils.LogUtil;
+import com.commonlib.utils.task.callback.Callback;
 
 import java.util.concurrent.Executor;
 
@@ -214,7 +213,7 @@ import java.util.concurrent.Executor;
                         if (taskProxy.callOnCanceled) return;
                         taskProxy.callOnCanceled = true;
                         assert args != null;
-                        taskProxy.task.onCancelled((com.commonlib.task.callback.Callback.CancelledException) args[0]);
+                        taskProxy.task.onCancelled((com.commonlib.utils.task.callback.Callback.CancelledException) args[0]);
                         break;
                     }
                     case MSG_WHAT_ON_FINISHED: {

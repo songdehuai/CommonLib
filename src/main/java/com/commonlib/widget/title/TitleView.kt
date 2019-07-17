@@ -11,8 +11,8 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 
 import com.commonlib.R
-import com.commonlib.expansion.GONE
-import com.commonlib.expansion.VISIBLE
+import com.commonlib.ext.gone
+import com.commonlib.ext.visible
 
 import com.commonlib.widget.title.TitleType.NONE
 
@@ -68,21 +68,21 @@ class TitleView : RelativeLayout {
         this.titleType = titleType
         this.titleCallBack = titleCallBack
         when (titleType) {
-            TitleType.NONE -> {
-                rightRl?.GONE()
-                finishLi?.GONE()
+            NONE -> {
+                rightRl?.gone()
+                finishLi?.gone()
             }
             TitleType.DETAIL -> {
-                rightRl?.GONE()
-                finishLi?.VISIBLE()
+                rightRl?.gone()
+                finishLi?.visible()
             }
             TitleType.PUBLISH -> {
-                rightRl?.VISIBLE()
-                finishLi?.VISIBLE()
+                rightRl?.visible()
+                finishLi?.visible()
             }
             TitleType.PUBLISH_ONE -> {
-                rightRl?.VISIBLE()
-                finishLi?.GONE()
+                rightRl?.visible()
+                finishLi?.gone()
             }
         }
 
@@ -97,26 +97,26 @@ class TitleView : RelativeLayout {
      */
     fun setPublishText(text: CharSequence) {
         rightTv?.text = text
-        rightTv?.VISIBLE()
-        rightRl?.VISIBLE()
+        rightTv?.visible()
+        rightRl?.visible()
     }
 
     fun showPublishText() {
-        rightTv?.VISIBLE()
-        rightRl?.VISIBLE()
+        rightTv?.visible()
+        rightRl?.visible()
     }
 
     fun hidePublishText() {
-        rightTv?.GONE()
+        rightTv?.gone()
     }
 
     fun showLeft() {
-        finishLi?.VISIBLE()
-        finishIv?.VISIBLE()
+        finishLi?.visible()
+        finishIv?.visible()
     }
 
     fun hideLeft() {
-        finishIv?.GONE()
+        finishIv?.gone()
     }
 
 }

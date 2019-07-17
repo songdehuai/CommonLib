@@ -1,7 +1,7 @@
-package com.commonlib.task;
+package com.commonlib.utils.task;
 
 
-import com.commonlib.task.callback.Callback;
+import com.commonlib.utils.task.callback.Callback;
 
 /**
  * Created by songdehuai on 19/04/12.

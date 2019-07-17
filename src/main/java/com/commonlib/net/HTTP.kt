@@ -1,6 +1,6 @@
 package com.commonlib.net
 
-import com.commonlib.expansion.logE
+import com.commonlib.ext.logE
 import okgo.OkGo
 import okgo.callback.AbsCallback
 import okgo.model.Response

@@ -1,7 +1,7 @@
 package com.commonlib.net
 
+import com.commonlib.ext.logE
 import com.google.gson.Gson
-import com.commonlib.expansion.logE
 import java.lang.reflect.ParameterizedType
 
 import okgo.callback.AbsCallback

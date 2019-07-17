@@ -8,11 +8,11 @@ import android.provider.MediaStore;
 
 import com.commonlib.R;
 import com.commonlib.base.BaseActivity;
-import com.commonlib.task.AbsTask;
-import com.commonlib.task.Task;
 import com.commonlib.utils.grantor.PermissionListener;
 import com.commonlib.utils.grantor.PermissionsUtil;
 import com.commonlib.utils.imagepicker.adapter.MultImageReAdapter;
+import com.commonlib.utils.task.AbsTask;
+import com.commonlib.utils.task.Task;
 
 import org.jetbrains.annotations.Nullable;
 

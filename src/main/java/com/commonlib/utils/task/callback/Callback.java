@@ -1,4 +1,4 @@
-package com.commonlib.task.callback;
+package com.commonlib.utils.task.callback;
 
 import java.lang.reflect.Type;
 

@@ -1,4 +1,4 @@
-package com.commonlib.task;
+package com.commonlib.utils.task;
 
 /**
  * Created by songdehuai on 19/04/12.
