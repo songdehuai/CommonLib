@@ -66,7 +66,8 @@ fun Context.getInstallIntent(apkFile: File): Intent? {
 }
 
 /** 跳转到无障碍服务设置页面 */
-fun Context.goToAccessibilitySetting() = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).run { startActivity(this) }
+fun Context.goToAccessibilitySetting() =
+    Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).run { startActivity(this) }
 
 
 /**
