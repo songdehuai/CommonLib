@@ -4,18 +4,15 @@ import android.content.Context
 import android.os.Handler
 import com.commonlib.utils.LogUtil
 import com.commonlib.ws.listener.OnMessageListener
-import com.tencent.mmkv.MMKV
 import okhttp3.*
-import org.apache.commons.lang3.time.DateFormatUtils
-import java.util.*
 import java.util.concurrent.CopyOnWriteArrayList
 import java.util.concurrent.TimeUnit
 
 
-object CommSocketClient {
+object SocketClient {
 
     private var mWsManager: WsManager? = null
-    private val url = "ws://echo.websocket.org"
+    private var url = "ws://echo.websocket.org"
     private var isConnect = false
     private var callBackList: CopyOnWriteArrayList<OnMessageListener> =
         CopyOnWriteArrayList<OnMessageListener>()
@@ -36,6 +33,11 @@ object CommSocketClient {
 
     fun clearMessageCallback() {
         callBackList.clear()
+    }
+
+    fun connect(context: Context, url: String): CommSocket? {
+        this.url = url
+        return connect(context)
     }
 
     fun connect(context: Context): CommSocket? {
@@ -94,8 +96,6 @@ object CommSocketClient {
             mWsManager.let {
                 if (mWsManager?.isWsConnected!!) {
                     LogUtil.i("发送$msg")
-                    MMKV.defaultMMKV()
-                        .putString(DateFormatUtils.format(Date(), "MM-dd HH:mm:ss"), msg)
                     it?.sendMessage(msg)
                 }
             }
