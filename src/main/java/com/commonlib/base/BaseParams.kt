@@ -16,12 +16,14 @@ open class BaseParams : HttpParams() {
 
     /**
      * 普通的键值对参数
+     * 不可更改，不可删除，否则将会将多余参数带入请求中
      */
     @Transient
     var urlParamsMap: LinkedHashMap<String, List<String>>? = null
 
     /**
      * 文件的键值对参数
+     * 不可更改，不可删除，否则将会将多余参数带入请求中
      */
     @Transient
     var fileParamsMap: LinkedHashMap<String, List<HttpParams.FileWrapper>>? = null
@@ -55,8 +57,19 @@ open class BaseParams : HttpParams() {
      * @param resultCallBack 返回数据监听
      * @param <T>            要解析的数据类型
     </T> */
-    fun <T> postJson(url: String, resultCallBack: ResultCallBack<T>) {
+    open fun <T> postJson(url: String, resultCallBack: ResultCallBack<T>) {
         OkGo.post<T>(url).upJson(this.toJson()).execute(resultCallBack)
+    }
+
+    /**
+     * 发送Post请求，json形式
+     *
+     * @param url            请求地址
+     * @param resultCallBack 返回数据监听
+     * @param <T>            要解析的数据类型
+    </T> */
+    open fun <T> postJson(url: String, jsonParams: String, resultCallBack: ResultCallBack<T>) {
+        OkGo.post<T>(url).upJson(jsonParams).execute(resultCallBack)
     }
 
     /**
