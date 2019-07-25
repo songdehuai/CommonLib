@@ -1,7 +1,6 @@
 package com.commonlib.utils.kadapter
 
 import android.content.Context
-import android.util.Log
 import android.util.SparseArray
 import android.view.LayoutInflater
 import android.view.View
@@ -300,7 +299,6 @@ abstract class BaseKTAdapter<T> : RecyclerView.Adapter<BaseKTAdapter.ViewHolder>
     private var mOnItemClickListener: ((position: Int, view: View) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, type: Int): ViewHolder {
-        Log.i("BaseKTAdapter", "onBindViewHolder=" + type)
         val inflater = LayoutInflater.from(parent.context)
 
         when (type) {
@@ -339,7 +337,6 @@ abstract class BaseKTAdapter<T> : RecyclerView.Adapter<BaseKTAdapter.ViewHolder>
     }
 
     override fun onBindViewHolder(vh: ViewHolder, position: Int) {
-        Log.i("info", "onBindViewHolder=" + position)
         if (getItemViewType(position) == HEAD_TYPE) {
             mBindHeader(vh.itemView)
         } else if (getItemViewType(position) == FOOT_TYPE) {
@@ -370,17 +367,16 @@ abstract class BaseKTAdapter<T> : RecyclerView.Adapter<BaseKTAdapter.ViewHolder>
     }
 
     override fun getItemViewType(position: Int): Int {
-        if (isHead(position)) {
-            return HEAD_TYPE
-        } else if (isFoot(position)) {
-            return FOOT_TYPE
-        } else if (mTypes.size > 0) {//单个布局这个集合为0
-            return GetType(position)
+        return when {
+            isHead(position) -> HEAD_TYPE
+            isFoot(position) -> FOOT_TYPE
+            mTypes.size > 0 -> //单个布局这个集合为0
+                getType(position)
+            else -> super.getItemViewType(position)
         }
-        return super.getItemViewType(position)
     }
 
-    private fun GetType(position: Int): Int {
+    private fun getType(position: Int): Int {
         var p = position
         if (mHeaderLayoutId != null || mHeaderView != null) {
             p = if (position > 0) position - 1 else position
@@ -417,12 +413,12 @@ abstract class BaseKTAdapter<T> : RecyclerView.Adapter<BaseKTAdapter.ViewHolder>
         var views = SparseArray<View>()
 
         fun <T : View> bindView(id: Int): T {
-            if (views.get(id) == null) {
+            return if (views.get(id) == null) {
                 var view = itemView.findViewById<View>(id)
                 views.put(id, view)
-                return view as T
+                view as T
             } else {
-                return views.get(id) as T
+                views.get(id) as T
             }
         }
 
