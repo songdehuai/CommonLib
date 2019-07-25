@@ -1,6 +1,7 @@
 package com.commonlib.net
 
 import okgo.OkGo
+import okgo.callback.Callback
 import okgo.model.HttpParams
 import org.json.JSONObject
 
@@ -52,7 +53,7 @@ class JsonParams : HttpParams() {
      * @param uri       请求地址
      * @param callBack  请求回调
      */
-    fun <T> postJson(uri: String, callBack: ResultCallBack<T>) {
+    fun <T> postJson(uri: String, callBack: Callback<T>) {
         OkGo.post<T>(uri).upJson(mJsonParams.toString()).execute(callBack)
     }
 
