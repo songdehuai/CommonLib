@@ -297,12 +297,11 @@ object StatusBarUtils {
         return getBarHeight(context, "navigation_bar_height")
     }
 
-    private fun getBarHeight(context: Context, name: String): Int {
+    public fun getBarHeight(context: Context, name: String): Int {
         val resources = context.resources
         val resourceId = resources.getIdentifier(name, "dimen", "android")
         return resources.getDimensionPixelSize(resourceId)
     }
-
 
     private fun setStatusBarView(
         context: Context,

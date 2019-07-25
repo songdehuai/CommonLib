@@ -10,7 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout
  * 状态栏工具
  * @author songdehuai
  */
-class StatusBar private constructor(private val activity: Activity) {
+class StatusBar(private val activity: Activity) {
 
     // 状态栏灰色模式
     private var statusDark: Boolean = false

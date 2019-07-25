@@ -12,7 +12,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class FreeSync {
 
     /**
-     * 默认本类名存储key，自定义key避免使用此名称
+     * 默认key，自定义key避免使用此名称
      */
     private static final String DEFAULTFREESYNCNAME = "FREESYNC_DEFAULTFREESYNCNAME";
 
@@ -38,15 +38,15 @@ public class FreeSync {
         }
     }
 
-    public synchronized void addCall(Activity activity, FreeSyncCallback freeSyncCallback) {
+    public synchronized <T> void addCall(Activity activity, FreeSyncCallback<T> freeSyncCallback) {
         addCall(activity.getLocalClassName(), freeSyncCallback);
     }
 
-    public synchronized void addOneCallOnly(Activity activity, FreeSyncCallback freeSyncCallback) {
+    public synchronized <T> void addOneCallOnly(Activity activity, FreeSyncCallback<T> freeSyncCallback) {
         addOneCallOnly(activity.getLocalClassName(), freeSyncCallback);
     }
 
-    public synchronized void addCall(String name, FreeSyncCallback freeSyncCallback) {
+    public synchronized <T> void addCall(String name, FreeSyncCallback<T> freeSyncCallback) {
         boolean isHas = false;
         for (String s : freeSyncCallbackHashMap.keySet()) {
             if (name.equals(s)) {
@@ -61,7 +61,7 @@ public class FreeSync {
         }
     }
 
-    public synchronized void addOneCallOnly(String name, FreeSyncCallback freeSyncCallback) {
+    public synchronized <T> void addOneCallOnly(String name, FreeSyncCallback<T> freeSyncCallback) {
         for (String s : freeSyncCallbackHashMap.keySet()) {
             if (name.equals(s)) {
                 freeSyncCallbackHashMap.remove(s);
@@ -72,6 +72,14 @@ public class FreeSync {
         freeSyncCallbackHashMap.put(name, callBackList);
     }
 
+
+    public synchronized void call(Activity activity) {
+        call(activity.getLocalClassName());
+    }
+
+    public synchronized void call(Activity activity, Object obj) {
+        call(activity.getLocalClassName(), obj);
+    }
 
     public synchronized void call(String name, Object obj) {
         CopyOnWriteArrayList<FreeSyncCallback> callBackList;
@@ -128,8 +136,8 @@ public class FreeSync {
         }
     }
 
-    public interface FreeSyncCallback {
+    public interface FreeSyncCallback<T> {
 
-        void onCall(String name, Object obj);
+        void onCall(String name, T obj);
     }
 }

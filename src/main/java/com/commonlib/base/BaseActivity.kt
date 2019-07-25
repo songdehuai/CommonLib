@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.commonlib.R
 import com.commonlib.utils.DialogUtils
+import com.commonlib.utils.ultimatebar.StatusBar
+import com.commonlib.utils.ultimatebar.StatusBarUtils
 import com.commonlib.utils.ultimatebar.ultimateBarBuilder
 import com.commonlib.widget.title.TitleCallBack
 import com.commonlib.widget.title.TitleType
@@ -120,9 +122,9 @@ open class BaseActivity : AppCompatActivity(), TitleCallBack {
      * @param layoutResID 布局id
      */
     override fun setContentView(layoutResID: Int) {
-        super.setContentView(layoutResID)
         mContentView = View.inflate(this, layoutResID, null)
         rootView.removeAllViews()
+        rootView.setPadding(0, StatusBarUtils.getStatusBarHeight(thisActivity), 0, 0)
         rootView.addView(mContentView)
     }
 
