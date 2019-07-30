@@ -2,6 +2,7 @@ package com.commonlib.base
 
 import android.app.Activity
 import android.content.DialogInterface
+import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
@@ -36,8 +37,8 @@ open class BaseActivity : AppCompatActivity(), TitleCallBack {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(rootView)
         init()
+        super.setContentView(rootView)
     }
 
     private fun init() {
@@ -108,7 +109,14 @@ open class BaseActivity : AppCompatActivity(), TitleCallBack {
     }
 
     /**
-     * 设置暗色状态栏
+     * 自动设置状态栏Padding
+     */
+    open fun autoPadding() {
+        rootView.setPadding(0, StatusBarUtils.getStatusBarHeight(thisActivity), 0, 0)
+    }
+
+    /**
+     * 设置深色状态栏
      */
     open fun setStatusDark(boolean: Boolean) {
         ultimateBarBuilder()
@@ -119,12 +127,21 @@ open class BaseActivity : AppCompatActivity(), TitleCallBack {
 
     /**
      * 设置ContentView
+     * @param view View
+     */
+    override fun setContentView(view: View) {
+        mContentView = view
+        rootView.removeAllViews()
+        rootView.addView(mContentView)
+    }
+
+    /**
+     * 设置ContentView
      * @param layoutResID 布局id
      */
     override fun setContentView(layoutResID: Int) {
         mContentView = View.inflate(this, layoutResID, null)
         rootView.removeAllViews()
-        rootView.setPadding(0, StatusBarUtils.getStatusBarHeight(thisActivity), 0, 0)
         rootView.addView(mContentView)
     }
 
